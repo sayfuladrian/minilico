@@ -651,6 +651,8 @@
 .section-footer {
 
     position: fixed;
+    z-index: 99;
+    background-color: #FFFFFF;
     width: 100%;
     margin-bottom: 0px;
     bottom: 0px;

@@ -427,6 +427,30 @@ p:last-child {
   padding-top: 20px;
   padding-bottom: 20px; }
 
+/* mobile only */
+/* mobile only .end */
+/* ================ SECTION-FOOTER ==================  */
+.section-responsive-menu ul li {
+  margin-bottom: 5px; }
+.section-responsive-menu ul a {
+  color: inherit; }
+  .section-responsive-menur ul a:hover {
+    color: #3167eb; }
+.section-responsive-menu .logo-footer {
+  height: 40px; }
+.section-responsive-menu .title {
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #212529; }
+
+.footer-bottom {
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+.footer-copyright {
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
 /* ================== COMPONENTS =================== */
 /* ================ OWL SLIDER BANNER ================ */
 .slider-banner-owl .owl-nav .owl-prev, .slider-banner-owl .owl-nav .owl-next {
