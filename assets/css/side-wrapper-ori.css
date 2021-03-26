@@ -1,0 +1,1952 @@
+/* ========= INFORMATION ============================
+	- document:  WP Coder!
+	- author:    Dmytro Lobov
+	- url:       https://wow-estore.com/
+==================================================== */
+.flBtn {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none
+}
+
+.flBtn ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none
+}
+
+.flBtn {
+    position: fixed;
+    z-index: 1000
+}
+
+.flBtn input {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0
+}
+
+.flBtn input:checked ~ a [data-action=open] {
+    display: none
+}
+
+.flBtn input:checked ~ a [data-action=close] {
+    display: inline-block
+}
+
+.flBtn input:checked ~ ul {
+    visibility: visible
+}
+
+.flBtn input:checked ~ ul li {
+    visibility: visible;
+    opacity: 1
+}
+
+.flBtn input:checked ~ ul li [tooltip][data-tooltip=show]:before {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: .5s
+}
+
+.flBtn input:hover + a {
+    color: #383838;
+    background: #4db6ac
+}
+
+.flBtn input:hover + a[tooltip]:before {
+    visibility: visible;
+    opacity: 1
+}
+
+.flBtn a {
+    position: relative;
+    z-index: 2;
+    display: block;
+    vertical-align: middle;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    background: #009688;
+    color: #fff;
+    transition: background .5s;
+    -o-transition: background .5s;
+    -ms-transition: background .5s;
+    -moz-transition: background .5s;
+    -webkit-transition: background .5s
+}
+
+.flBtn a:hover {
+    color: #383838;
+    background: #4db6ac
+}
+
+.flBtn ul {
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    visibility: hidden
+}
+
+.flBtn ul li {
+    display: inline-block;
+    margin: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s;
+    -o-transition: all .5s;
+    -ms-transition: all .5s;
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s
+}
+
+.flBtn [tooltip]:before {
+    position: absolute;
+    content: attr(tooltip);
+    visibility: hidden;
+    opacity: 0;
+    padding: 0 10px;
+    white-space: nowrap;
+    background: rgba(0, 0, 0, .8);
+    color: #fff;
+    transition: all .5s
+}
+
+.flBtn [tooltip]:hover:before {
+    visibility: visible;
+    opacity: 1
+}
+
+.flBtn [tooltip][data-tooltip=show]:before {
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s
+}
+
+.flBtn [data-role][tooltip][data-tooltip=show]:before {
+    visibility: visible;
+    opacity: 1
+}
+
+.flBtn [data-action=open] {
+    display: inline-block
+}
+
+.flBtn [data-action=close] {
+    display: none
+}
+
+.flBtn-size-small a {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px
+}
+
+.flBtn-size-small ul a {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px
+}
+
+.flBtn-size-small [tooltip]:before {
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px
+}
+
+.flBtn-size-medium a {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 24px
+}
+
+.flBtn-size-medium ul a {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px
+}
+
+.flBtn-size-medium [tooltip]:before {
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px
+}
+
+.flBtn-size-large a {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 28px
+}
+
+.flBtn-size-large ul a {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px
+}
+
+.flBtn-size-large [tooltip]:before {
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px
+}
+
+.flBtn-shape-circle a {
+    border-radius: 50%
+}
+
+.flBtn-shape-ellipse a {
+    border-radius: 25% 75%
+}
+
+.flBtn-shape-square a {
+    border-radius: 0
+}
+
+.flBtn-shape-rsquare a {
+    border-radius: 25%
+}
+
+.flBtn-position-br {
+    bottom: 20px;
+    right: 20px
+}
+
+.flBtn-position-br [tooltip][data-role]:before {
+    right: 100%;
+    bottom: 100%
+}
+
+.flBtn-position-br .flBtn-first {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 100%
+}
+
+.flBtn-position-br .flBtn-first [tooltip]:before {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 5px
+}
+
+.flBtn-position-br .flBtn-second {
+    display: flex;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 100%
+}
+
+.flBtn-position-br .flBtn-second [tooltip]:before {
+    right: 100%;
+    bottom: 100%;
+    margin-bottom: 5px
+}
+
+.flBtn-position-tr {
+    top: 40px;
+    right: 20px
+}
+
+.flBtn-position-tr [tooltip][data-role]:before {
+    right: 100%;
+    top: 100%
+}
+
+.flBtn-position-tr .flBtn-first {
+    right: 50%;
+    transform: translateX(50%);
+    top: 100%
+}
+
+.flBtn-position-tr .flBtn-first [tooltip]:before {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 5px
+}
+
+.flBtn-position-tr .flBtn-second {
+    display: flex;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 100%
+}
+
+.flBtn-position-tr .flBtn-second [tooltip]:before {
+    right: 100%;
+    top: 100%;
+    margin-top: 5px
+}
+
+.flBtn-position-tl {
+    top: 20px;
+    left: 20px
+}
+
+.flBtn-position-tl [tooltip][data-role]:before {
+    left: 100%;
+    top: 100%
+}
+
+.flBtn-position-tl .flBtn-first {
+    right: 50%;
+    transform: translateX(50%);
+    top: 100%
+}
+
+.flBtn-position-tl .flBtn-first [tooltip]:before {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 5px
+}
+
+.flBtn-position-tl .flBtn-second {
+    display: flex;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100%
+}
+
+.flBtn-position-tl .flBtn-second [tooltip]:before {
+    left: 100%;
+    top: 100%;
+    margin-top: 5px
+}
+
+.flBtn-position-bl {
+    bottom: 20px;
+    left: 20px
+}
+
+.flBtn-position-bl [tooltip][data-role]:before {
+    left: 100%;
+    bottom: 100%
+}
+
+.flBtn-position-bl .flBtn-first {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 100%
+}
+
+.flBtn-position-bl .flBtn-first [tooltip]:before {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 5px
+}
+
+.flBtn-position-bl .flBtn-second {
+    display: flex;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100%
+}
+
+.flBtn-position-bl .flBtn-second [tooltip]:before {
+    left: 100%;
+    bottom: 100%;
+    margin-bottom: 5px
+}
+
+.flBtn-position-b {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.flBtn-position-b [tooltip][data-role]:before {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 5px
+}
+
+.flBtn-position-b .flBtn-first {
+    display: flex;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 100%
+}
+
+.flBtn-position-b .flBtn-first [tooltip]:before {
+    right: 0;
+    bottom: 100%;
+    margin-bottom: 5px
+}
+
+.flBtn-position-b .flBtn-second {
+    display: flex;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100%
+}
+
+.flBtn-position-b .flBtn-second [tooltip]:before {
+    left: 0;
+    bottom: 100%;
+    margin-bottom: 5px
+}
+
+.flBtn-position-t {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.flBtn-position-t [tooltip][data-role]:before {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 5px
+}
+
+.flBtn-position-t .flBtn-first {
+    display: flex;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 100%
+}
+
+.flBtn-position-t .flBtn-first [tooltip]:before {
+    right: 0;
+    top: 100%;
+    transform: translateX(-50%);
+    margin-top: 5px
+}
+
+.flBtn-position-t .flBtn-second {
+    display: flex;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100%
+}
+
+.flBtn-position-t .flBtn-second [tooltip]:before {
+    left: 100%;
+    top: 100%;
+    transform: translateX(-50%);
+    margin-top: 5px
+}
+
+.flBtn-position-l {
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%)
+}
+
+.flBtn-position-l .flBtn-first {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 100%
+}
+
+.flBtn-position-l .flBtn-second {
+    right: 50%;
+    transform: translateX(50%);
+    top: 100%
+}
+
+.flBtn-position-l [tooltip]:before {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 5px
+}
+
+.flBtn-position-r {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%)
+}
+
+.flBtn-position-r .flBtn-first {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 100%
+}
+
+.flBtn-position-r .flBtn-second {
+    right: 50%;
+    transform: translateX(50%);
+    top: 100%
+}
+
+.flBtn-position-r [tooltip]:before {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 5px
+}
+
+.flBtn a[data-color*=WHITE], .flBtn a[data-color*=white]:hover, .flBtn input:hover + a[data-color*=white] {
+    background-color: #fff
+}
+
+.flBtn a[data-color*=WHITE]:hover, .flBtn a[data-color*=white], .flBtn input:hover + a[data-color*=WHITE] {
+    color: #fff
+}
+
+.flBtn a[data-color*=GREY], .flBtn a[data-color*=grey]:hover, .flBtn input:hover + a[data-color*=grey] {
+    background-color: grey
+}
+
+.flBtn a[data-color*=GREY]:hover, .flBtn a[data-color*=grey], .flBtn input:hover + a[data-color*=GREY] {
+    color: grey
+}
+
+.flBtn a[data-color*=BLACK], .flBtn a[data-color*=black]:hover, .flBtn input:hover + a[data-color*=black] {
+    background-color: #000
+}
+
+.flBtn a[data-color*=BLACK]:hover, .flBtn a[data-color*=black], .flBtn input:hover + a[data-color*=BLACK] {
+    color: #000
+}
+
+.flBtn a[data-color*=RED], .flBtn a[data-color*=red]:hover, .flBtn input:hover + a[data-color*=red] {
+    background-color: #e3001b
+}
+
+.flBtn a[data-color*=RED]:hover, .flBtn a[data-color*=red], .flBtn input:hover + a[data-color*=RED] {
+    color: #e3001b
+}
+
+.flBtn a[data-color*=ORANGE], .flBtn a[data-color*=orange]:hover, .flBtn input:hover + a[data-color*=orange] {
+    background-color: #f60
+}
+
+.flBtn a[data-color*=ORANGE]:hover, .flBtn a[data-color*=orange], .flBtn input:hover + a[data-color*=ORANGE] {
+    color: #f60
+}
+
+.flBtn a[data-color*=YELLOW], .flBtn a[data-color*=yellow]:hover, .flBtn input:hover + a[data-color*=yellow] {
+    background-color: #ffcc01
+}
+
+.flBtn a[data-color*=YELLOW]:hover, .flBtn a[data-color*=yellow], .flBtn input:hover + a[data-color*=YELLOW] {
+    color: #ffcc01
+}
+
+.flBtn a[data-color*=LIME], .flBtn a[data-color*=lime]:hover, .flBtn input:hover + a[data-color*=lime] {
+    background-color: #b1c903
+}
+
+.flBtn a[data-color*=LIME]:hover, .flBtn a[data-color*=lime], .flBtn input:hover + a[data-color*=LIME] {
+    color: #b1c903
+}
+
+.flBtn a[data-color*=GREEN], .flBtn a[data-color*=green]:hover, .flBtn input:hover + a[data-color*=green] {
+    background-color: #27a22d
+}
+
+.flBtn a[data-color*=GREEN]:hover, .flBtn a[data-color*=green], .flBtn input:hover + a[data-color*=GREEN] {
+    color: #27a22d
+}
+
+.flBtn a[data-color*=CYAN], .flBtn a[data-color*=cyan]:hover, .flBtn input:hover + a[data-color*=cyan] {
+    background-color: #00b1e5
+}
+
+.flBtn a[data-color*=CYAN]:hover, .flBtn a[data-color*=cyan], .flBtn input:hover + a[data-color*=CYAN] {
+    color: #00b1e5
+}
+
+.flBtn a[data-color*=BLUE], .flBtn a[data-color*=blue]:hover, .flBtn input:hover + a[data-color*=blue] {
+    background-color: #006bb3
+}
+
+.flBtn a[data-color*=BLUE]:hover, .flBtn a[data-color*=blue], .flBtn input:hover + a[data-color*=BLUE] {
+    color: #006bb3
+}
+
+.flBtn a[data-color*=PURPLE], .flBtn a[data-color*=purple]:hover, .flBtn input:hover + a[data-color*=purple] {
+    background-color: #ad007c
+}
+
+.flBtn a[data-color*=PURPLE]:hover, .flBtn a[data-color*=purple], .flBtn input:hover + a[data-color*=PURPLE] {
+    color: #ad007c
+}
+
+.flBtn a[data-color*=PINK], .flBtn a[data-color*=pink]:hover, .flBtn input:hover + a[data-color*=pink] {
+    background-color: #ea4c89
+}
+
+.flBtn a[data-color*=PINK]:hover, .flBtn a[data-color*=pink], .flBtn input:hover + a[data-color*=PINK] {
+    color: #ea4c89
+}
+
+.flBtn-effect-rotate input:checked ~ ul li {
+    transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg)
+}
+
+.flBtn-effect-scale li {
+    transform: scale(.1, .1);
+    -o-transform: scale(.1, .1);
+    -ms-transform: scale(.1, .1);
+    -moz-transform: scale(.1, .1);
+    -webkit-transform: scale(.1, .1)
+}
+
+.flBtn-effect-scale input:checked ~ ul li {
+    transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1)
+}
+
+.flBtn-effect-rotate-scale li {
+    transform: rotate(0) scale(.1, .1);
+    -o-transform: rotate(0) scale(.1, .1);
+    -ms-transform: rotate(0) scale(.1, .1);
+    -moz-transform: rotate(0) scale(.1, .1);
+    -webkit-transform: rotate(0) scale(.1, .1)
+}
+
+.flBtn-effect-rotate-scale input:checked ~ ul li {
+    transform: rotate(360deg) scale(1, 1);
+    -o-transform: rotate(360deg) scale(1, 1);
+    -ms-transform: rotate(360deg) scale(1, 1);
+    -moz-transform: rotate(360deg) scale(1, 1);
+    -webkit-transform: rotate(360deg) scale(1, 1)
+}
+
+.flBtn-position-tr.flBtn-effect-translate .flBtn-first li {
+    transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%)
+}
+
+.flBtn-position-tr.flBtn-effect-translate .flBtn-second li {
+    transform: translateX(100%);
+    -o-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%)
+}
+
+.flBtn-position-tr.flBtn-effect-translate input:checked ~ .flBtn-first li {
+    transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0)
+}
+
+.flBtn-position-tr.flBtn-effect-translate input:checked ~ .flBtn-second li {
+    transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -webkit-transform: translateX(0)
+}
+
+.flBtn-position-tl.flBtn-effect-translate .flBtn-first li {
+    transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%)
+}
+
+.flBtn-position-tl.flBtn-effect-translate .flBtn-second li {
+    transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%)
+}
+
+.flBtn-position-tl.flBtn-effect-translate input:checked ~ .flBtn-first li {
+    transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0)
+}
+
+.flBtn-position-tl.flBtn-effect-translate input:checked ~ .flBtn-second li {
+    transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -webkit-transform: translateX(0)
+}
+
+.flBtn-position-bl.flBtn-effect-translate .flBtn-first li {
+    transform: translateY(100%);
+    -o-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%)
+}
+
+.flBtn-position-bl.flBtn-effect-translate .flBtn-second li {
+    transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%)
+}
+
+.flBtn-position-bl.flBtn-effect-translate input:checked ~ .flBtn-first li {
+    transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0)
+}
+
+.flBtn-position-bl.flBtn-effect-translate input:checked ~ .flBtn-second li {
+    transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -webkit-transform: translateX(0)
+}
+
+.flBtn-position-br.flBtn-effect-translate .flBtn-first li {
+    transform: translateY(100%);
+    -o-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%)
+}
+
+.flBtn-position-br.flBtn-effect-translate .flBtn-second li {
+    transform: translateX(100%);
+    -o-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%)
+}
+
+.flBtn-position-br.flBtn-effect-translate input:checked ~ .flBtn-first li {
+    transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0)
+}
+
+.flBtn-position-br.flBtn-effect-translate input:checked ~ .flBtn-second li {
+    transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -webkit-transform: translateX(0)
+}
+
+.flBtn-position-l.flBtn-effect-translate .flBtn-first li, .flBtn-position-r.flBtn-effect-translate .flBtn-first li {
+    transform: translateY(100%);
+    -o-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%)
+}
+
+.flBtn-position-l.flBtn-effect-translate .flBtn-second li, .flBtn-position-r.flBtn-effect-translate .flBtn-second li {
+    transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%)
+}
+
+.flBtn-position-l.flBtn-effect-translate input:checked ~ .flBtn-first li, .flBtn-position-r.flBtn-effect-translate input:checked ~ .flBtn-first li {
+    transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0)
+}
+
+.flBtn-position-l.flBtn-effect-translate input:checked ~ .flBtn-second li, .flBtn-position-r.flBtn-effect-translate input:checked ~ .flBtn-second li {
+    transform: translateY(0);
+    -o-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0)
+}
+
+.flBtn-position-b.flBtn-effect-translate .flBtn-first li, .flBtn-position-t.flBtn-effect-translate .flBtn-first li {
+    transform: translateX(100%);
+    -o-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%)
+}
+
+.flBtn-position-b.flBtn-effect-translate .flBtn-second li, .flBtn-position-t.flBtn-effect-translate .flBtn-second li {
+    transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%)
+}
+
+.flBtn-position-b.flBtn-effect-translate input:checked ~ .flBtn-first li, .flBtn-position-t.flBtn-effect-translate input:checked ~ .flBtn-first li {
+    transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -webkit-transform: translateX(0)
+}
+
+.flBtn-position-b.flBtn-effect-translate input:checked ~ .flBtn-second li, .flBtn-position-t.flBtn-effect-translate input:checked ~ .flBtn-second li {
+    transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -webkit-transform: translateX(0)
+}
+
+.flBtn-position-tr.flBtn-effect-rotate-translate .flBtn-first li {
+    transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%)
+}
+
+.flBtn-position-tr.flBtn-effect-rotate-translate .flBtn-second li {
+    transform: translateX(100%);
+    -o-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%)
+}
+
+.flBtn-position-tr.flBtn-effect-rotate-translate input:checked ~ .flBtn-first li {
+    transform: translateY(0) rotate(360deg);
+    -o-transform: translateY(0) rotate(360deg);
+    -ms-transform: translateY(0) rotate(360deg);
+    -moz-transform: translateY(0) rotate(360deg);
+    -webkit-transform: translateY(0) rotate(360deg)
+}
+
+.flBtn-position-tr.flBtn-effect-rotate-translate input:checked ~ .flBtn-second li {
+    transform: translateX(0) rotate(360deg);
+    -o-transform: translateX(0) rotate(360deg);
+    -ms-transform: translateX(0) rotate(360deg);
+    -moz-transform: translateX(0) rotate(360deg);
+    -webkit-transform: translateX(0) rotate(360deg)
+}
+
+.flBtn-position-tl.flBtn-effect-rotate-translate .flBtn-first li {
+    transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%)
+}
+
+.flBtn-position-tl.flBtn-effect-rotate-translate .flBtn-second li {
+    transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%)
+}
+
+.flBtn-position-tl.flBtn-effect-rotate-translate input:checked ~ .flBtn-first li {
+    transform: translateY(0) rotate(360deg);
+    -o-transform: translateY(0) rotate(360deg);
+    -ms-transform: translateY(0) rotate(360deg);
+    -moz-transform: translateY(0) rotate(360deg);
+    -webkit-transform: translateY(0) rotate(360deg)
+}
+
+.flBtn-position-tl.flBtn-effect-rotate-translate input:checked ~ .flBtn-second li {
+    transform: translateX(0) rotate(360deg);
+    -o-transform: translateX(0) rotate(360deg);
+    -ms-transform: translateX(0) rotate(360deg);
+    -moz-transform: translateX(0) rotate(360deg);
+    -webkit-transform: translateX(0) rotate(360deg)
+}
+
+.flBtn-position-bl.flBtn-effect-rotate-translate .flBtn-first li {
+    transform: translateY(100%);
+    -o-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%)
+}
+
+.flBtn-position-bl.flBtn-effect-rotate-translate .flBtn-second li {
+    transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%)
+}
+
+.flBtn-position-bl.flBtn-effect-rotate-translate input:checked ~ .flBtn-first li {
+    transform: translateY(0) rotate(360deg);
+    -o-transform: translateY(0) rotate(360deg);
+    -ms-transform: translateY(0) rotate(360deg);
+    -moz-transform: translateY(0) rotate(360deg);
+    -webkit-transform: translateY(0) rotate(360deg)
+}
+
+.flBtn-position-bl.flBtn-effect-rotate-translate input:checked ~ .flBtn-second li {
+    transform: translateX(0) rotate(360deg);
+    -o-transform: translateX(0) rotate(360deg);
+    -ms-transform: translateX(0) rotate(360deg);
+    -moz-transform: translateX(0) rotate(360deg);
+    -webkit-transform: translateX(0) rotate(360deg)
+}
+
+.flBtn-position-br.flBtn-effect-rotate-translate .flBtn-first li {
+    transform: translateY(100%);
+    -o-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%)
+}
+
+.flBtn-position-br.flBtn-effect-rotate-translate .flBtn-second li {
+    transform: translateX(100%);
+    -o-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%)
+}
+
+.flBtn-position-br.flBtn-effect-rotate-translate input:checked ~ .flBtn-first li {
+    transform: translateY(0) rotate(360deg);
+    -o-transform: translateY(0) rotate(360deg);
+    -ms-transform: translateY(0) rotate(360deg);
+    -moz-transform: translateY(0) rotate(360deg);
+    -webkit-transform: translateY(0) rotate(360deg)
+}
+
+.flBtn-position-br.flBtn-effect-rotate-translate input:checked ~ .flBtn-second li {
+    transform: translateX(0) rotate(360deg);
+    -o-transform: translateX(0) rotate(360deg);
+    -ms-transform: translateX(0) rotate(360deg);
+    -moz-transform: translateX(0) rotate(360deg);
+    -webkit-transform: translateX(0) rotate(360deg)
+}
+
+.flBtn-position-l.flBtn-effect-rotate-translate .flBtn-first li, .flBtn-position-r.flBtn-effect-rotate-translate .flBtn-first li {
+    transform: translateY(100%);
+    -o-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%)
+}
+
+.flBtn-position-l.flBtn-effect-rotate-translate .flBtn-second li, .flBtn-position-r.flBtn-effect-rotate-translate .flBtn-second li {
+    transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%)
+}
+
+.flBtn-position-l.flBtn-effect-rotate-translate input:checked ~ .flBtn-first li, .flBtn-position-r.flBtn-effect-rotate-translate input:checked ~ .flBtn-first li {
+    transform: translateY(0) rotate(360deg);
+    -o-transform: translateY(0) rotate(360deg);
+    -ms-transform: translateY(0) rotate(360deg);
+    -moz-transform: translateY(0) rotate(360deg);
+    -webkit-transform: translateY(0) rotate(360deg)
+}
+
+.flBtn-position-l.flBtn-effect-rotate-translate input:checked ~ .flBtn-second li, .flBtn-position-r.flBtn-effect-rotate-translate input:checked ~ .flBtn-second li {
+    transform: translateY(0) rotate(360deg);
+    -o-transform: translateY(0) rotate(360deg);
+    -ms-transform: translateY(0) rotate(360deg);
+    -moz-transform: translateY(0) rotate(360deg);
+    -webkit-transform: translateY(0) rotate(360deg)
+}
+
+.flBtn-position-b.flBtn-effect-rotate-translate .flBtn-first li, .flBtn-position-t.flBtn-effect-rotate-translate .flBtn-first li {
+    transform: translateX(100%);
+    -o-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%)
+}
+
+.flBtn-position-b.flBtn-effect-rotate-translate .flBtn-second li, .flBtn-position-t.flBtn-effect-rotate-translate .flBtn-second li {
+    transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%)
+}
+
+.flBtn-position-b.flBtn-effect-rotate-translate input:checked ~ .flBtn-first li, .flBtn-position-t.flBtn-effect-rotate-translate input:checked ~ .flBtn-first li {
+    transform: translateX(0) rotate(360deg);
+    -o-transform: translateX(0) rotate(360deg);
+    -ms-transform: translateX(0) rotate(360deg);
+    -moz-transform: translateX(0) rotate(360deg);
+    -webkit-transform: translateX(0) rotate(360deg)
+}
+
+.flBtn-position-b.flBtn-effect-rotate-translate input:checked ~ .flBtn-second li, .flBtn-position-t.flBtn-effect-rotate-translate input:checked ~ .flBtn-second li {
+    transform: translateX(0) rotate(360deg);
+    -o-transform: translateX(0) rotate(360deg);
+    -ms-transform: translateX(0) rotate(360deg);
+    -moz-transform: translateX(0) rotate(360deg);
+    -webkit-transform: translateX(0) rotate(360deg)
+}
+
+.flBtn-position-tr.flBtn-effect-rotate-translate-scale .flBtn-first li {
+    transform: translateY(-100%) rotate(0) scale(.1, .1);
+    -o-transform: translateY(-100%) rotate(0) scale(.1, .1);
+    -ms-transform: translateY(-100%) rotate(0) scale(.1, .1);
+    -moz-transform: translateY(-100%) rotate(0) scale(.1, .1);
+    -webkit-transform: translateY(-100%) rotate(0) scale(.1, .1)
+}
+
+.flBtn-position-tr.flBtn-effect-rotate-translate-scale .flBtn-second li {
+    transform: translateX(100%) rotate(0) scale(.1, .1);
+    -o-transform: translateX(100%) rotate(0) scale(.1, .1);
+    -ms-transform: translateX(100%) rotate(0) scale(.1, .1);
+    -moz-transform: translateX(100%) rotate(0) scale(.1, .1);
+    -webkit-transform: translateX(100%) rotate(0) scale(.1, .1)
+}
+
+.flBtn-position-tr.flBtn-effect-rotate-translate-scale input:checked ~ .flBtn-first li {
+    transform: translateY(0) rotate(360deg) scale(1, 1);
+    -o-transform: translateY(0) rotate(360deg) scale(1, 1);
+    -ms-transform: translateY(0) rotate(360deg) scale(1, 1);
+    -moz-transform: translateY(0) rotate(360deg) scale(1, 1);
+    -webkit-transform: translateY(0) rotate(360deg) scale(1, 1)
+}
+
+.flBtn-position-tr.flBtn-effect-rotate-translate-scale input:checked ~ .flBtn-second li {
+    transform: translateX(0) rotate(360deg) scale(1, 1);
+    -o-transform: translateX(0) rotate(360deg) scale(1, 1);
+    -ms-transform: translateX(0) rotate(360deg) scale(1, 1);
+    -moz-transform: translateX(0) rotate(360deg) scale(1, 1);
+    -webkit-transform: translateX(0) rotate(360deg) scale(1, 1)
+}
+
+.flBtn-position-tl.flBtn-effect-rotate-translate-scale .flBtn-first li {
+    transform: translateY(-100%) rotate(0) scale(.1, .1);
+    -o-transform: translateY(-100%) rotate(0) scale(.1, .1);
+    -ms-transform: translateY(-100%) rotate(0) scale(.1, .1);
+    -moz-transform: translateY(-100%) rotate(0) scale(.1, .1);
+    -webkit-transform: translateY(-100%) rotate(0) scale(.1, .1)
+}
+
+.flBtn-position-tl.flBtn-effect-rotate-translate-scale .flBtn-second li {
+    transform: translateX(-100%) rotate(0) scale(.1, .1);
+    -o-transform: translateX(-100%) rotate(0) scale(.1, .1);
+    -ms-transform: translateX(-100%) rotate(0) scale(.1, .1);
+    -moz-transform: translateX(-100%) rotate(0) scale(.1, .1);
+    -webkit-transform: translateX(-100%) rotate(0) scale(.1, .1)
+}
+
+.flBtn-position-tl.flBtn-effect-rotate-translate-scale input:checked ~ .flBtn-first li {
+    transform: translateY(0) rotate(360deg) scale(1, 1);
+    -o-transform: translateY(0) rotate(360deg) scale(1, 1);
+    -ms-transform: translateY(0) rotate(360deg) scale(1, 1);
+    -moz-transform: translateY(0) rotate(360deg) scale(1, 1);
+    -webkit-transform: translateY(0) rotate(360deg) scale(1, 1)
+}
+
+.flBtn-position-tl.flBtn-effect-rotate-translate-scale input:checked ~ .flBtn-second li {
+    transform: translateX(0) rotate(360deg) scale(1, 1);
+    -o-transform: translateX(0) rotate(360deg) scale(1, 1);
+    -ms-transform: translateX(0) rotate(360deg) scale(1, 1);
+    -moz-transform: translateX(0) rotate(360deg) scale(1, 1);
+    -webkit-transform: translateX(0) rotate(360deg) scale(1, 1)
+}
+
+.flBtn-position-bl.flBtn-effect-rotate-translate-scale .flBtn-first li {
+    transform: translateY(100%) rotate(0) scale(.1, .1);
+    -o-transform: translateY(100%) rotate(0) scale(.1, .1);
+    -ms-transform: translateY(100%) rotate(0) scale(.1, .1);
+    -moz-transform: translateY(100%) rotate(0) scale(.1, .1);
+    -webkit-transform: translateY(100%) rotate(0) scale(.1, .1)
+}
+
+.flBtn-position-bl.flBtn-effect-rotate-translate-scale .flBtn-second li {
+    transform: translateX(-100%) rotate(0) scale(.1, .1);
+    -o-transform: translateX(-100%) rotate(0) scale(.1, .1);
+    -ms-transform: translateX(-100%) rotate(0) scale(.1, .1);
+    -moz-transform: translateX(-100%) rotate(0) scale(.1, .1);
+    -webkit-transform: translateX(-100%) rotate(0) scale(.1, .1)
+}
+
+.flBtn-position-bl.flBtn-effect-rotate-translate-scale input:checked ~ .flBtn-first li {
+    transform: translateY(0) rotate(360deg) scale(1, 1);
+    -o-transform: translateY(0) rotate(360deg) scale(1, 1);
+    -ms-transform: translateY(0) rotate(360deg) scale(1, 1);
+    -moz-transform: translateY(0) rotate(360deg) scale(1, 1);
+    -webkit-transform: translateY(0) rotate(360deg) scale(1, 1)
+}
+
+.flBtn-position-bl.flBtn-effect-rotate-translate-scale input:checked ~ .flBtn-second li {
+    transform: translateX(0) rotate(360deg) scale(1, 1);
+    -o-transform: translateX(0) rotate(360deg) scale(1, 1);
+    -ms-transform: translateX(0) rotate(360deg) scale(1, 1);
+    -moz-transform: translateX(0) rotate(360deg) scale(1, 1);
+    -webkit-transform: translateX(0) rotate(360deg) scale(1, 1)
+}
+
+.flBtn-position-br.flBtn-effect-rotate-translate-scale .flBtn-first li {
+    transform: translateY(100%) rotate(0) scale(.1, .1);
+    -o-transform: translateY(100%) rotate(0) scale(.1, .1);
+    -ms-transform: translateY(100%) rotate(0) scale(.1, .1);
+    -moz-transform: translateY(100%) rotate(0) scale(.1, .1);
+    -webkit-transform: translateY(100%) rotate(0) scale(.1, .1)
+}
+
+.flBtn-position-br.flBtn-effect-rotate-translate-scale .flBtn-second li {
+    transform: translateX(100%) rotate(0) scale(.1, .1);
+    -o-transform: translateX(100%) rotate(0) scale(.1, .1);
+    -ms-transform: translateX(100%) rotate(0) scale(.1, .1);
+    -moz-transform: translateX(100%) rotate(0) scale(.1, .1);
+    -webkit-transform: translateX(100%) rotate(0) scale(.1, .1)
+}
+
+.flBtn-position-br.flBtn-effect-rotate-translate-scale input:checked ~ .flBtn-first li {
+    transform: translateY(0) rotate(360deg) scale(1, 1);
+    -o-transform: translateY(0) rotate(360deg) scale(1, 1);
+    -ms-transform: translateY(0) rotate(360deg) scale(1, 1);
+    -moz-transform: translateY(0) rotate(360deg) scale(1, 1);
+    -webkit-transform: translateY(0) rotate(360deg) scale(1, 1)
+}
+
+.flBtn-position-br.flBtn-effect-rotate-translate-scale input:checked ~ .flBtn-second li {
+    transform: translateX(0) rotate(360deg) scale(1, 1);
+    -o-transform: translateX(0) rotate(360deg) scale(1, 1);
+    -ms-transform: translateX(0) rotate(360deg) scale(1, 1);
+    -moz-transform: translateX(0) rotate(360deg) scale(1, 1);
+    -webkit-transform: translateX(0) rotate(360deg) scale(1, 1)
+}
+
+.flBtn-position-l.flBtn-effect-rotate-translate-scale .flBtn-first li, .flBtn-position-r.flBtn-effect-rotate-translate-scale .flBtn-first li {
+    transform: translateY(100%) rotate(0) scale(.1, .1);
+    -o-transform: translateY(100%) rotate(0) scale(.1, .1);
+    -ms-transform: translateY(100%) rotate(0) scale(.1, .1);
+    -moz-transform: translateY(100%) rotate(0) scale(.1, .1);
+    -webkit-transform: translateY(100%) rotate(0) scale(.1, .1)
+}
+
+.flBtn-position-l.flBtn-effect-rotate-translate-scale .flBtn-second li, .flBtn-position-r.flBtn-effect-rotate-translate-scale .flBtn-second li {
+    transform: translateY(-100%) rotate(0) scale(.1, .1);
+    -o-transform: translateY(-100%) rotate(0) scale(.1, .1);
+    -ms-transform: translateY(-100%) rotate(0) scale(.1, .1);
+    -moz-transform: translateY(-100%) rotate(0) scale(.1, .1);
+    -webkit-transform: translateY(-100%) rotate(0) scale(.1, .1)
+}
+
+.flBtn-position-l.flBtn-effect-rotate-translate-scale input:checked ~ .flBtn-first li, .flBtn-position-r.flBtn-effect-rotate-translate-scale input:checked ~ .flBtn-first li {
+    transform: translateY(0) rotate(360deg) scale(1, 1);
+    -o-transform: translateY(0) rotate(360deg) scale(1, 1);
+    -ms-transform: translateY(0) rotate(360deg) scale(1, 1);
+    -moz-transform: translateY(0) rotate(360deg) scale(1, 1);
+    -webkit-transform: translateY(0) rotate(360deg) scale(1, 1)
+}
+
+.flBtn-position-l.flBtn-effect-rotate-translate-scale input:checked ~ .flBtn-second li, .flBtn-position-r.flBtn-effect-rotate-translate-scale input:checked ~ .flBtn-second li {
+    transform: translateY(0) rotate(360deg) scale(1, 1);
+    -o-transform: translateY(0) rotate(360deg) scale(1, 1);
+    -ms-transform: translateY(0) rotate(360deg) scale(1, 1);
+    -moz-transform: translateY(0) rotate(360deg) scale(1, 1);
+    -webkit-transform: translateY(0) rotate(360deg) scale(1, 1)
+}
+
+.flBtn-position-b.flBtn-effect-rotate-translate-scale .flBtn-first li, .flBtn-position-t.flBtn-effect-rotate-translate-scale .flBtn-first li {
+    transform: translateX(100%) rotate(0) scale(.1, .1);
+    -o-transform: translateX(100%) rotate(0) scale(.1, .1);
+    -ms-transform: translateX(100%) rotate(0) scale(.1, .1);
+    -moz-transform: translateX(100%) rotate(0) scale(.1, .1);
+    -webkit-transform: translateX(100%) rotate(0) scale(.1, .1)
+}
+
+.flBtn-position-b.flBtn-effect-rotate-translate-scale .flBtn-second li, .flBtn-position-t.flBtn-effect-rotate-translate-scale .flBtn-second li {
+    transform: translateX(-100%) rotate(0) scale(.1, .1);
+    -o-transform: translateX(-100%) rotate(0) scale(.1, .1);
+    -ms-transform: translateX(-100%) rotate(0) scale(.1, .1);
+    -moz-transform: translateX(-100%) rotate(0) scale(.1, .1);
+    -webkit-transform: translateX(-100%) rotate(0) scale(.1, .1)
+}
+
+.flBtn-position-b.flBtn-effect-rotate-translate-scale input:checked ~ .flBtn-first li, .flBtn-position-t.flBtn-effect-rotate-translate-scale input:checked ~ .flBtn-first li {
+    transform: translateX(0) rotate(360deg) scale(1, 1);
+    -o-transform: translateX(0) rotate(360deg) scale(1, 1);
+    -ms-transform: translateX(0) rotate(360deg) scale(1, 1);
+    -moz-transform: translateX(0) rotate(360deg) scale(1, 1);
+    -webkit-transform: translateX(0) rotate(360deg) scale(1, 1)
+}
+
+.flBtn-position-b.flBtn-effect-rotate-translate-scale input:checked ~ .flBtn-second li, .flBtn-position-t.flBtn-effect-rotate-translate-scale input:checked ~ .flBtn-second li {
+    transform: translateX(0) rotate(360deg) scale(1, 1);
+    -o-transform: translateX(0) rotate(360deg) scale(1, 1);
+    -ms-transform: translateX(0) rotate(360deg) scale(1, 1);
+    -moz-transform: translateX(0) rotate(360deg) scale(1, 1);
+    -webkit-transform: translateX(0) rotate(360deg) scale(1, 1)
+}
+
+.flBtn-position-tr.flBtn-effect-translate-scale .flBtn-first li {
+    transform: translateY(-100%) scale(.1, .1);
+    -o-transform: translateY(-100%) scale(.1, .1);
+    -ms-transform: translateY(-100%) scale(.1, .1);
+    -moz-transform: translateY(-100%) scale(.1, .1);
+    -webkit-transform: translateY(-100%) scale(.1, .1)
+}
+
+.flBtn-position-tr.flBtn-effect-translate-scale .flBtn-second li {
+    transform: translateX(100%) scale(.1, .1);
+    -o-transform: translateX(100%) scale(.1, .1);
+    -ms-transform: translateX(100%) scale(.1, .1);
+    -moz-transform: translateX(100%) scale(.1, .1);
+    -webkit-transform: translateX(100%) scale(.1, .1)
+}
+
+.flBtn-position-tr.flBtn-effect-translate-scale input:checked ~ .flBtn-first li {
+    transform: translateY(0) scale(1, 1);
+    -o-transform: translateY(0) scale(1, 1);
+    -ms-transform: translateY(0) scale(1, 1);
+    -moz-transform: translateY(0) scale(1, 1);
+    -webkit-transform: translateY(0) scale(1, 1)
+}
+
+.flBtn-position-tr.flBtn-effect-translate-scale input:checked ~ .flBtn-second li {
+    transform: translateX(0) scale(1, 1);
+    -o-transform: translateX(0) scale(1, 1);
+    -ms-transform: translateX(0) scale(1, 1);
+    -moz-transform: translateX(0) scale(1, 1);
+    -webkit-transform: translateX(0) scale(1, 1)
+}
+
+.flBtn-position-tl.flBtn-effect-translate-scale .flBtn-first li {
+    transform: translateY(-100%) scale(.1, .1);
+    -o-transform: translateY(-100%) scale(.1, .1);
+    -ms-transform: translateY(-100%) scale(.1, .1);
+    -moz-transform: translateY(-100%) scale(.1, .1);
+    -webkit-transform: translateY(-100%) scale(.1, .1)
+}
+
+.flBtn-position-tl.flBtn-effect-translate-scale .flBtn-second li {
+    transform: translateX(-100%) scale(.1, .1);
+    -o-transform: translateX(-100%) scale(.1, .1);
+    -ms-transform: translateX(-100%) scale(.1, .1);
+    -moz-transform: translateX(-100%) scale(.1, .1);
+    -webkit-transform: translateX(-100%) scale(.1, .1)
+}
+
+.flBtn-position-tl.flBtn-effect-translate-scale input:checked ~ .flBtn-first li {
+    transform: translateY(0) scale(1, 1);
+    -o-transform: translateY(0) scale(1, 1);
+    -ms-transform: translateY(0) scale(1, 1);
+    -moz-transform: translateY(0) scale(1, 1);
+    -webkit-transform: translateY(0) scale(1, 1)
+}
+
+.flBtn-position-tl.flBtn-effect-translate-scale input:checked ~ .flBtn-second li {
+    transform: translateX(0) scale(1, 1);
+    -o-transform: translateX(0) scale(1, 1);
+    -ms-transform: translateX(0) scale(1, 1);
+    -moz-transform: translateX(0) scale(1, 1);
+    -webkit-transform: translateX(0) scale(1, 1)
+}
+
+.flBtn-position-bl.flBtn-effect-translate-scale .flBtn-first li {
+    transform: translateY(100%) scale(.1, .1);
+    -o-transform: translateY(100%) scale(.1, .1);
+    -ms-transform: translateY(100%) scale(.1, .1);
+    -moz-transform: translateY(100%) scale(.1, .1);
+    -webkit-transform: translateY(100%) scale(.1, .1)
+}
+
+.flBtn-position-bl.flBtn-effect-translate-scale .flBtn-second li {
+    transform: translateX(-100%) scale(.1, .1);
+    -o-transform: translateX(-100%) scale(.1, .1);
+    -ms-transform: translateX(-100%) scale(.1, .1);
+    -moz-transform: translateX(-100%) scale(.1, .1);
+    -webkit-transform: translateX(-100%) scale(.1, .1)
+}
+
+.flBtn-position-bl.flBtn-effect-translate-scale input:checked ~ .flBtn-first li {
+    transform: translateY(0) scale(1, 1);
+    -o-transform: translateY(0) scale(1, 1);
+    -ms-transform: translateY(0) scale(1, 1);
+    -moz-transform: translateY(0) scale(1, 1);
+    -webkit-transform: translateY(0) scale(1, 1)
+}
+
+.flBtn-position-bl.flBtn-effect-translate-scale input:checked ~ .flBtn-second li {
+    transform: translateX(0) scale(1, 1);
+    -o-transform: translateX(0) scale(1, 1);
+    -ms-transform: translateX(0) scale(1, 1);
+    -moz-transform: translateX(0) scale(1, 1);
+    -webkit-transform: translateX(0) scale(1, 1)
+}
+
+.flBtn-position-br.flBtn-effect-translate-scale .flBtn-first li {
+    transform: translateY(100%) scale(.1, .1);
+    -o-transform: translateY(100%) scale(.1, .1);
+    -ms-transform: translateY(100%) scale(.1, .1);
+    -moz-transform: translateY(100%) scale(.1, .1);
+    -webkit-transform: translateY(100%) scale(.1, .1)
+}
+
+.flBtn-position-br.flBtn-effect-translate-scale .flBtn-second li {
+    transform: translateX(100%) scale(.1, .1);
+    -o-transform: translateX(100%) scale(.1, .1);
+    -ms-transform: translateX(100%) scale(.1, .1);
+    -moz-transform: translateX(100%) scale(.1, .1);
+    -webkit-transform: translateX(100%) scale(.1, .1)
+}
+
+.flBtn-position-br.flBtn-effect-translate-scale input:checked ~ .flBtn-first li {
+    transform: translateY(0) scale(1, 1);
+    -o-transform: translateY(0) scale(1, 1);
+    -ms-transform: translateY(0) scale(1, 1);
+    -moz-transform: translateY(0) scale(1, 1);
+    -webkit-transform: translateY(0) scale(1, 1)
+}
+
+.flBtn-position-br.flBtn-effect-translate-scale input:checked ~ .flBtn-second li {
+    transform: translateX(0) scale(1, 1);
+    -o-transform: translateX(0) scale(1, 1);
+    -ms-transform: translateX(0) scale(1, 1);
+    -moz-transform: translateX(0) scale(1, 1);
+    -webkit-transform: translateX(0) scale(1, 1)
+}
+
+.flBtn-position-l.flBtn-effect-translate-scale .flBtn-first li, .flBtn-position-r.flBtn-effect-translate-scale .flBtn-first li {
+    transform: translateY(100%) scale(.1, .1);
+    -o-transform: translateY(100%) scale(.1, .1);
+    -ms-transform: translateY(100%) scale(.1, .1);
+    -moz-transform: translateY(100%) scale(.1, .1);
+    -webkit-transform: translateY(100%) scale(.1, .1)
+}
+
+.flBtn-position-l.flBtn-effect-translate-scale .flBtn-second li, .flBtn-position-r.flBtn-effect-translate-scale .flBtn-second li {
+    transform: translateY(-100%) scale(.1, .1);
+    -o-transform: translateY(-100%) scale(.1, .1);
+    -ms-transform: translateY(-100%) scale(.1, .1);
+    -moz-transform: translateY(-100%) scale(.1, .1);
+    -webkit-transform: translateY(-100%) scale(.1, .1)
+}
+
+.flBtn-position-l.flBtn-effect-translate-scale input:checked ~ .flBtn-first li, .flBtn-position-r.flBtn-effect-translate-scale input:checked ~ .flBtn-first li {
+    transform: translateY(0) scale(1, 1);
+    -o-transform: translateY(0) scale(1, 1);
+    -ms-transform: translateY(0) scale(1, 1);
+    -moz-transform: translateY(0) scale(1, 1);
+    -webkit-transform: translateY(0) scale(1, 1)
+}
+
+.flBtn-position-l.flBtn-effect-translate-scale input:checked ~ .flBtn-second li, .flBtn-position-r.flBtn-effect-translate-scale input:checked ~ .flBtn-second li {
+    transform: translateY(0) scale(1, 1);
+    -o-transform: translateY(0) scale(1, 1);
+    -ms-transform: translateY(0) scale(1, 1);
+    -moz-transform: translateY(0) scale(1, 1);
+    -webkit-transform: translateY(0) scale(1, 1)
+}
+
+.flBtn-position-b.flBtn-effect-translate-scale .flBtn-first li, .flBtn-position-t.flBtn-effect-translate-scale .flBtn-first li {
+    transform: translateX(100%) scale(.1, .1);
+    -o-transform: translateX(100%) scale(.1, .1);
+    -ms-transform: translateX(100%) scale(.1, .1);
+    -moz-transform: translateX(100%) scale(.1, .1);
+    -webkit-transform: translateX(100%) scale(.1, .1)
+}
+
+.flBtn-position-b.flBtn-effect-translate-scale .flBtn-second li, .flBtn-position-t.flBtn-effect-translate-scale .flBtn-second li {
+    transform: translateX(-100%) scale(.1, .1);
+    -o-transform: translateX(-100%) scale(.1, .1);
+    -ms-transform: translateX(-100%) scale(.1, .1);
+    -moz-transform: translateX(-100%) scale(.1, .1);
+    -webkit-transform: translateX(-100%) scale(.1, .1)
+}
+
+.flBtn-position-b.flBtn-effect-translate-scale input:checked ~ .flBtn-first li, .flBtn-position-t.flBtn-effect-translate-scale input:checked ~ .flBtn-first li {
+    transform: translateX(0) scale(1, 1);
+    -o-transform: translateX(0) scale(1, 1);
+    -ms-transform: translateX(0) scale(1, 1);
+    -moz-transform: translateX(0) scale(1, 1);
+    -webkit-transform: translateX(0) scale(1, 1)
+}
+
+.flBtn-position-b.flBtn-effect-translate-scale input:checked ~ .flBtn-second li, .flBtn-position-t.flBtn-effect-translate-scale input:checked ~ .flBtn-second li {
+    transform: translateX(0) scale(1, 1);
+    -o-transform: translateX(0) scale(1, 1);
+    -ms-transform: translateX(0) scale(1, 1);
+    -moz-transform: translateX(0) scale(1, 1);
+    -webkit-transform: translateX(0) scale(1, 1)
+}
+
+#floatBtn i {
+    color: #222 !important
+}
+
+@media print {
+    #floatBtn {
+        display: none
+    }
+}
+
+@-webkit-keyframes flBtn-bounce {
+    20%, 53%, 80%, from, to {
+        -webkit-animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+        animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0)
+    }
+    40%, 43% {
+        -webkit-animation-timing-function: cubic-bezier(.755, .05, .855, .06);
+        animation-timing-function: cubic-bezier(.755, .05, .855, .06);
+        -webkit-transform: translate3d(0, -30px, 0);
+        transform: translate3d(0, -30px, 0)
+    }
+    70% {
+        -webkit-animation-timing-function: cubic-bezier(.755, .05, .855, .06);
+        animation-timing-function: cubic-bezier(.755, .05, .855, .06);
+        -webkit-transform: translate3d(0, -15px, 0);
+        transform: translate3d(0, -15px, 0)
+    }
+    90% {
+        -webkit-transform: translate3d(0, -4px, 0);
+        transform: translate3d(0, -4px, 0)
+    }
+}
+
+@keyframes flBtn-bounce {
+    20%, 53%, 80%, from, to {
+        -webkit-animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+        animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0)
+    }
+    40%, 43% {
+        -webkit-animation-timing-function: cubic-bezier(.755, .05, .855, .06);
+        animation-timing-function: cubic-bezier(.755, .05, .855, .06);
+        -webkit-transform: translate3d(0, -30px, 0);
+        transform: translate3d(0, -30px, 0)
+    }
+    70% {
+        -webkit-animation-timing-function: cubic-bezier(.755, .05, .855, .06);
+        animation-timing-function: cubic-bezier(.755, .05, .855, .06);
+        -webkit-transform: translate3d(0, -15px, 0);
+        transform: translate3d(0, -15px, 0)
+    }
+    90% {
+        -webkit-transform: translate3d(0, -4px, 0);
+        transform: translate3d(0, -4px, 0)
+    }
+}
+
+.flBtn-bounce {
+    -webkit-animation-name: flBtn-bounce;
+    animation-name: flBtn-bounce;
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom
+}
+
+@-webkit-keyframes flBtn-flash {
+    50%, from, to {
+        opacity: 1
+    }
+    25%, 75% {
+        opacity: 0
+    }
+}
+
+@keyframes flBtn-flash {
+    50%, from, to {
+        opacity: 1
+    }
+    25%, 75% {
+        opacity: 0
+    }
+}
+
+.flBtn-flash {
+    -webkit-animation-name: flBtn-flash;
+    animation-name: flBtn-flash
+}
+
+@-webkit-keyframes flBtn-pulse {
+    from, to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1)
+    }
+    50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05)
+    }
+}
+
+@keyframes flBtn-pulse {
+    from, to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1)
+    }
+    50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05)
+    }
+}
+
+.flBtn-pulse {
+    -webkit-animation-name: flBtn-pulse;
+    animation-name: flBtn-pulse
+}
+
+@-webkit-keyframes flBtn-rubberBand {
+    from, to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1)
+    }
+    30% {
+        -webkit-transform: scale3d(1.25, .75, 1);
+        transform: scale3d(1.25, .75, 1)
+    }
+    40% {
+        -webkit-transform: scale3d(.75, 1.25, 1);
+        transform: scale3d(.75, 1.25, 1)
+    }
+    50% {
+        -webkit-transform: scale3d(1.15, .85, 1);
+        transform: scale3d(1.15, .85, 1)
+    }
+    65% {
+        -webkit-transform: scale3d(.95, 1.05, 1);
+        transform: scale3d(.95, 1.05, 1)
+    }
+    75% {
+        -webkit-transform: scale3d(1.05, .95, 1);
+        transform: scale3d(1.05, .95, 1)
+    }
+}
+
+@keyframes flBtn-rubberBand {
+    from, to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1)
+    }
+    30% {
+        -webkit-transform: scale3d(1.25, .75, 1);
+        transform: scale3d(1.25, .75, 1)
+    }
+    40% {
+        -webkit-transform: scale3d(.75, 1.25, 1);
+        transform: scale3d(.75, 1.25, 1)
+    }
+    50% {
+        -webkit-transform: scale3d(1.15, .85, 1);
+        transform: scale3d(1.15, .85, 1)
+    }
+    65% {
+        -webkit-transform: scale3d(.95, 1.05, 1);
+        transform: scale3d(.95, 1.05, 1)
+    }
+    75% {
+        -webkit-transform: scale3d(1.05, .95, 1);
+        transform: scale3d(1.05, .95, 1)
+    }
+}
+
+.flBtn-rubberBand {
+    -webkit-animation-name: flBtn-rubberBand;
+    animation-name: flBtn-rubberBand
+}
+
+@-webkit-keyframes flBtn-shake {
+    from, to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0)
+    }
+    10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0)
+    }
+    20%, 40%, 60%, 80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0)
+    }
+}
+
+@keyframes flBtn-shake {
+    from, to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0)
+    }
+    10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0)
+    }
+    20%, 40%, 60%, 80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0)
+    }
+}
+
+.flBtn-shake {
+    -webkit-animation-name: flBtn-shake;
+    animation-name: flBtn-shake
+}
+
+@-webkit-keyframes flBtn-headShake {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+    6.5% {
+        -webkit-transform: translateX(-6px) rotateY(-9deg);
+        transform: translateX(-6px) rotateY(-9deg)
+    }
+    18.5% {
+        -webkit-transform: translateX(5px) rotateY(7deg);
+        transform: translateX(5px) rotateY(7deg)
+    }
+    31.5% {
+        -webkit-transform: translateX(-3px) rotateY(-5deg);
+        transform: translateX(-3px) rotateY(-5deg)
+    }
+    43.5% {
+        -webkit-transform: translateX(2px) rotateY(3deg);
+        transform: translateX(2px) rotateY(3deg)
+    }
+    50% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+}
+
+@keyframes flBtn-headShake {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+    6.5% {
+        -webkit-transform: translateX(-6px) rotateY(-9deg);
+        transform: translateX(-6px) rotateY(-9deg)
+    }
+    18.5% {
+        -webkit-transform: translateX(5px) rotateY(7deg);
+        transform: translateX(5px) rotateY(7deg)
+    }
+    31.5% {
+        -webkit-transform: translateX(-3px) rotateY(-5deg);
+        transform: translateX(-3px) rotateY(-5deg)
+    }
+    43.5% {
+        -webkit-transform: translateX(2px) rotateY(3deg);
+        transform: translateX(2px) rotateY(3deg)
+    }
+    50% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+}
+
+.flBtn-headShake {
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-name: flBtn-headShake;
+    animation-name: flBtn-headShake
+}
+
+@-webkit-keyframes flBtn-swing {
+    20% {
+        -webkit-transform: rotate3d(0, 0, 1, 15deg);
+        transform: rotate3d(0, 0, 1, 15deg)
+    }
+    40% {
+        -webkit-transform: rotate3d(0, 0, 1, -10deg);
+        transform: rotate3d(0, 0, 1, -10deg)
+    }
+    60% {
+        -webkit-transform: rotate3d(0, 0, 1, 5deg);
+        transform: rotate3d(0, 0, 1, 5deg)
+    }
+    80% {
+        -webkit-transform: rotate3d(0, 0, 1, -5deg);
+        transform: rotate3d(0, 0, 1, -5deg)
+    }
+    to {
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg)
+    }
+}
+
+@keyframes flBtn-swing {
+    20% {
+        -webkit-transform: rotate3d(0, 0, 1, 15deg);
+        transform: rotate3d(0, 0, 1, 15deg)
+    }
+    40% {
+        -webkit-transform: rotate3d(0, 0, 1, -10deg);
+        transform: rotate3d(0, 0, 1, -10deg)
+    }
+    60% {
+        -webkit-transform: rotate3d(0, 0, 1, 5deg);
+        transform: rotate3d(0, 0, 1, 5deg)
+    }
+    80% {
+        -webkit-transform: rotate3d(0, 0, 1, -5deg);
+        transform: rotate3d(0, 0, 1, -5deg)
+    }
+    to {
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg)
+    }
+}
+
+.flBtn-swing {
+    -webkit-transform-origin: top center;
+    transform-origin: top center;
+    -webkit-animation-name: flBtn-swing;
+    animation-name: flBtn-swing
+}
+
+@-webkit-keyframes flBtn-tada {
+    from, to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1)
+    }
+    10%, 20% {
+        -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+        transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg)
+    }
+    30%, 50%, 70%, 90% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+    }
+    40%, 60%, 80% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+    }
+}
+
+@keyframes flBtn-tada {
+    from, to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1)
+    }
+    10%, 20% {
+        -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+        transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg)
+    }
+    30%, 50%, 70%, 90% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+    }
+    40%, 60%, 80% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+    }
+}
+
+.flBtn-tada {
+    -webkit-animation-name: flBtn-tada;
+    animation-name: flBtn-tada
+}
+
+@-webkit-keyframes flBtn-wobble {
+    from, to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0)
+    }
+    15% {
+        -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+        transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg)
+    }
+    30% {
+        -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+        transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg)
+    }
+    45% {
+        -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+        transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg)
+    }
+    60% {
+        -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+        transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg)
+    }
+    75% {
+        -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+        transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg)
+    }
+}
+
+@keyframes flBtn-wobble {
+    from, to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0)
+    }
+    15% {
+        -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+        transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg)
+    }
+    30% {
+        -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+        transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg)
+    }
+    45% {
+        -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+        transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg)
+    }
+    60% {
+        -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+        transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg)
+    }
+    75% {
+        -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+        transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg)
+    }
+}
+
+.flBtn-wobble {
+    -webkit-animation-name: flBtn-wobble;
+    animation-name: flBtn-wobble
+}
+
+@-webkit-keyframes flBtn-jello {
+    11.1%, from, to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0)
+    }
+    22.2% {
+        -webkit-transform: skewX(-12.5deg) skewY(-12.5deg);
+        transform: skewX(-12.5deg) skewY(-12.5deg)
+    }
+    33.3% {
+        -webkit-transform: skewX(6.25deg) skewY(6.25deg);
+        transform: skewX(6.25deg) skewY(6.25deg)
+    }
+    44.4% {
+        -webkit-transform: skewX(-3.125deg) skewY(-3.125deg);
+        transform: skewX(-3.125deg) skewY(-3.125deg)
+    }
+    55.5% {
+        -webkit-transform: skewX(1.5625deg) skewY(1.5625deg);
+        transform: skewX(1.5625deg) skewY(1.5625deg)
+    }
+    66.6% {
+        -webkit-transform: skewX(-.78125deg) skewY(-.78125deg);
+        transform: skewX(-.78125deg) skewY(-.78125deg)
+    }
+    77.7% {
+        -webkit-transform: skewX(.390625deg) skewY(.390625deg);
+        transform: skewX(.390625deg) skewY(.390625deg)
+    }
+    88.8% {
+        -webkit-transform: skewX(-.1953125deg) skewY(-.1953125deg);
+        transform: skewX(-.1953125deg) skewY(-.1953125deg)
+    }
+}
+
+@keyframes flBtn-jello {
+    11.1%, from, to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0)
+    }
+    22.2% {
+        -webkit-transform: skewX(-12.5deg) skewY(-12.5deg);
+        transform: skewX(-12.5deg) skewY(-12.5deg)
+    }
+    33.3% {
+        -webkit-transform: skewX(6.25deg) skewY(6.25deg);
+        transform: skewX(6.25deg) skewY(6.25deg)
+    }
+    44.4% {
+        -webkit-transform: skewX(-3.125deg) skewY(-3.125deg);
+        transform: skewX(-3.125deg) skewY(-3.125deg)
+    }
+    55.5% {
+        -webkit-transform: skewX(1.5625deg) skewY(1.5625deg);
+        transform: skewX(1.5625deg) skewY(1.5625deg)
+    }
+    66.6% {
+        -webkit-transform: skewX(-.78125deg) skewY(-.78125deg);
+        transform: skewX(-.78125deg) skewY(-.78125deg)
+    }
+    77.7% {
+        -webkit-transform: skewX(.390625deg) skewY(.390625deg);
+        transform: skewX(.390625deg) skewY(.390625deg)
+    }
+    88.8% {
+        -webkit-transform: skewX(-.1953125deg) skewY(-.1953125deg);
+        transform: skewX(-.1953125deg) skewY(-.1953125deg)
+    }
+}
+
+.flBtn-jello {
+    -webkit-animation-name: flBtn-jello;
+    animation-name: flBtn-jello;
+    -webkit-transform-origin: center;
+    transform-origin: center
+}
+
+@-webkit-keyframes flBtn-heartBeat {
+    0%, 28%, 70% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+    14%, 42% {
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3)
+    }
+}
+
+@keyframes flBtn-heartBeat {
+    0%, 28%, 70% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+    14%, 42% {
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3)
+    }
+}
+
+.flBtn-heartBeat {
+    -webkit-animation-name: flBtn-heartBeat;
+    animation-name: flBtn-heartBeat;
+    -webkit-animation-duration: 1.3s;
+    animation-duration: 1.3s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out
+}
+
+.flBtn-animated {
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite
+}
+
+.flBtn-animated:hover, .flBtn-stop {
+    animation-play-state: paused
+}
